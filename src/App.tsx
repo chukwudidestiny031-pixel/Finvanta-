@@ -3,18 +3,33 @@ import { useState } from "react";
 function App() {
   const [screen, setScreen] = useState("home");
 
+  if (screen === "investments") {
+    return (
+      <main>
+        <h1>Investment Plans</h1>
+
+        <h2>Starter Plan</h2>
+        <p>View available investment details before proceeding.</p>
+        <button>View Plan</button>
+
+        <br /><br />
+
+        <button onClick={() => setScreen("dashboard")}>
+          Back to Dashboard
+        </button>
+      </main>
+    );
+  }
+
   if (screen === "withdraw") {
     return (
       <main>
         <h1>Withdraw</h1>
         <p>Enter the amount you want to withdraw.</p>
-
         <input type="number" placeholder="Amount in ₦" />
         <br /><br />
-
         <button>Continue</button>
         <br /><br />
-
         <button onClick={() => setScreen("dashboard")}>
           Back to Dashboard
         </button>
@@ -27,13 +42,10 @@ function App() {
       <main>
         <h1>Deposit</h1>
         <p>Enter the amount you want to deposit.</p>
-
         <input type="number" placeholder="Amount in ₦" />
         <br /><br />
-
         <button>Continue</button>
         <br /><br />
-
         <button onClick={() => setScreen("dashboard")}>
           Back to Dashboard
         </button>
@@ -46,7 +58,6 @@ function App() {
       <main>
         <h1>Transaction History</h1>
         <p>No transactions yet.</p>
-
         <button onClick={() => setScreen("dashboard")}>
           Back to Dashboard
         </button>
@@ -63,17 +74,15 @@ function App() {
         <p>Wallet Balance</p>
         <h2>₦0.00</h2>
 
-        <button onClick={() => setScreen("deposit")}>
-          Deposit
-        </button>
+        <button onClick={() => setScreen("deposit")}>Deposit</button>
         <br /><br />
 
-        <button onClick={() => setScreen("withdraw")}>
-          Withdraw
-        </button>
+        <button onClick={() => setScreen("withdraw")}>Withdraw</button>
         <br /><br />
 
-        <button>Investments</button>
+        <button onClick={() => setScreen("investments")}>
+          Investments
+        </button>
         <br /><br />
 
         <button onClick={() => setScreen("transactions")}>
@@ -81,9 +90,7 @@ function App() {
         </button>
         <br /><br />
 
-        <button onClick={() => setScreen("home")}>
-          Logout
-        </button>
+        <button onClick={() => setScreen("home")}>Logout</button>
       </main>
     );
   }
@@ -92,16 +99,12 @@ function App() {
     return (
       <main>
         <h1>Create Account</h1>
-
         <input placeholder="Full Name" />
         <br /><br />
-
         <input type="email" placeholder="Email Address" />
         <br /><br />
-
         <input type="password" placeholder="Password" />
         <br /><br />
-
         <button onClick={() => setScreen("dashboard")}>
           Create Account
         </button>
@@ -113,13 +116,10 @@ function App() {
     return (
       <main>
         <h1>Login to Finvanta</h1>
-
         <input type="email" placeholder="Email Address" />
         <br /><br />
-
         <input type="password" placeholder="Password" />
         <br /><br />
-
         <button onClick={() => setScreen("dashboard")}>
           Login
         </button>
@@ -133,14 +133,10 @@ function App() {
         <h1>Welcome to Finvanta</h1>
         <p>Create an account or log in to continue.</p>
 
-        <button onClick={() => setScreen("signup")}>
-          Sign Up
-        </button>
+        <button onClick={() => setScreen("signup")}>Sign Up</button>
         <br /><br />
 
-        <button onClick={() => setScreen("login")}>
-          Login
-        </button>
+        <button onClick={() => setScreen("login")}>Login</button>
       </main>
     );
   }
@@ -158,3 +154,4 @@ function App() {
 }
 
 export default App;
+

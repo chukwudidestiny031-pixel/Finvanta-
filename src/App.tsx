@@ -1,17 +1,59 @@
 import { useState } from "react";
 
 function App() {
-  const [started, setStarted] = useState(false);
+  const [screen, setScreen] = useState("home");
 
-  if (started) {
+  if (screen === "signup") {
+    return (
+      <main>
+        <h1>Create Account</h1>
+        <input placeholder="Full Name" />
+        <br /><br />
+        <input type="email" placeholder="Email Address" />
+        <br /><br />
+        <input type="password" placeholder="Password" />
+        <br /><br />
+        <button>Create Account</button>
+        <br /><br />
+        <button onClick={() => setScreen("welcome")}>
+          Back
+        </button>
+      </main>
+    );
+  }
+
+  if (screen === "login") {
+    return (
+      <main>
+        <h1>Login to Finvanta</h1>
+        <input type="email" placeholder="Email Address" />
+        <br /><br />
+        <input type="password" placeholder="Password" />
+        <br /><br />
+        <button>Login</button>
+        <br /><br />
+        <button onClick={() => setScreen("welcome")}>
+          Back
+        </button>
+      </main>
+    );
+  }
+
+  if (screen === "welcome") {
     return (
       <main>
         <h1>Welcome to Finvanta</h1>
         <p>Create an account or log in to continue.</p>
 
-        <button>Sign Up</button>
+        <button onClick={() => setScreen("signup")}>
+          Sign Up
+        </button>
+
         <br /><br />
-        <button>Login</button>
+
+        <button onClick={() => setScreen("login")}>
+          Login
+        </button>
       </main>
     );
   }
@@ -21,7 +63,7 @@ function App() {
       <h1>Finvanta</h1>
       <p>Manage your financial journey in one place.</p>
 
-      <button onClick={() => setStarted(true)}>
+      <button onClick={() => setScreen("welcome")}>
         Get Started
       </button>
     </main>

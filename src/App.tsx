@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import Deposit from "./pages/Deposit";
+import Withdraw from "./pages/Withdraw";
+import Profile from "./pages/Profile";
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -13,6 +15,14 @@ function App() {
     return <Deposit onNavigate={setScreen} />;
   }
 
+  if (screen === "withdraw") {
+    return <Withdraw onNavigate={setScreen} />;
+  }
+
+  if (screen === "profile") {
+    return <Profile onNavigate={setScreen} />;
+  }
+
   if (screen === "welcome") {
     return (
       <main>
@@ -23,7 +33,8 @@ function App() {
           Sign Up
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
         <button onClick={() => setScreen("login")}>
           Login
@@ -38,13 +49,22 @@ function App() {
         <h1>Create Account</h1>
 
         <input placeholder="Full Name" />
-        <br /><br />
+        <br />
+        <br />
 
-        <input type="email" placeholder="Email Address" />
-        <br /><br />
+        <input
+          type="email"
+          placeholder="Email Address"
+        />
+        <br />
+        <br />
 
-        <input type="password" placeholder="Password" />
-        <br /><br />
+        <input
+          type="password"
+          placeholder="Password"
+        />
+        <br />
+        <br />
 
         <button onClick={() => setScreen("dashboard")}>
           Create Account
@@ -58,11 +78,19 @@ function App() {
       <main>
         <h1>Login to Finvanta</h1>
 
-        <input type="email" placeholder="Email Address" />
-        <br /><br />
+        <input
+          type="email"
+          placeholder="Email Address"
+        />
+        <br />
+        <br />
 
-        <input type="password" placeholder="Password" />
-        <br /><br />
+        <input
+          type="password"
+          placeholder="Password"
+        />
+        <br />
+        <br />
 
         <button onClick={() => setScreen("dashboard")}>
           Login
@@ -74,7 +102,6 @@ function App() {
   return (
     <main>
       <h1>Finvanta</h1>
-
       <p>Manage your financial journey in one place.</p>
 
       <button onClick={() => setScreen("welcome")}>

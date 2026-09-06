@@ -5,6 +5,7 @@ import Withdraw from "./pages/Withdraw";
 import Profile from "./pages/Profile";
 import Investments from "./pages/Investments";
 import Transactions from "./pages/Transactions";
+import Settings from "./pages/Settings";
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -31,6 +32,10 @@ function App() {
 
   if (screen === "transactions") {
     return <Transactions onNavigate={setScreen} />;
+  }
+
+  if (screen === "settings") {
+    return <Settings onNavigate={setScreen} />;
   }
 
   if (screen === "welcome") {

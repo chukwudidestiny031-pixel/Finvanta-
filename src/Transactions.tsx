@@ -7,27 +7,45 @@ function Transactions({ onNavigate }: TransactionsProps) {
     <main>
       <h1>Transaction History</h1>
 
-      <p>View your recent account activity.</p>
+      <p>View all your account activities here.</p>
 
       <section>
-        <h2>No Transactions Yet</h2>
-        <p>
-          Your deposits, withdrawals, and other account activity will appear
-          here.
-        </p>
+        <h2>Deposit</h2>
+        <p>Money added to your account will appear here.</p>
+      </section>
+
+      <br />
+
+      <section>
+        <h2>Withdrawal</h2>
+        <p>Money withdrawn from your account will appear here.</p>
+      </section>
+
+      <br />
+
+      <section>
+        <h2>Investment</h2>
+        <p>Your investment activities will appear here.</p>
+      </section>
+
+      <br />
+
+      <section>
+        <h2>Transfer</h2>
+        <p>Money transfers will appear here if transfers are added.</p>
       </section>
 
       <br />
 
       <button onClick={() => onNavigate("deposit")}>
-        Make a Deposit
+        Deposit Money
       </button>
 
       <br />
       <br />
 
       <button onClick={() => onNavigate("withdraw")}>
-        Make a Withdrawal
+        Withdraw Money
       </button>
 
       <br />

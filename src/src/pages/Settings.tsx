@@ -7,41 +7,40 @@ function Settings({ onNavigate }: SettingsProps) {
     <main>
       <h1>Settings</h1>
 
-      <h2>Account Settings</h2>
-
       <p>Manage your Finvanta account preferences.</p>
 
-      <button>
-        Change Password
-      </button>
+      <section>
+        <h2>Account</h2>
+
+        <button>Change Password</button>
+
+        <br />
+        <br />
+
+        <button>Notification Settings</button>
+
+        <br />
+        <br />
+
+        <button>Privacy Settings</button>
+      </section>
 
       <br />
-      <br />
 
-      <button>
-        Notification Settings
-      </button>
+      <section>
+        <h2>Navigation</h2>
 
-      <br />
-      <br />
+        <button onClick={() => onNavigate("profile")}>
+          My Profile
+        </button>
 
-      <button>
-        Privacy Settings
-      </button>
+        <br />
+        <br />
 
-      <br />
-      <br />
-
-      <button onClick={() => onNavigate("profile")}>
-        Back to Profile
-      </button>
-
-      <br />
-      <br />
-
-      <button onClick={() => onNavigate("dashboard")}>
-        Back to Dashboard
-      </button>
+        <button onClick={() => onNavigate("dashboard")}>
+          Back to Dashboard
+        </button>
+      </section>
     </main>
   );
 }

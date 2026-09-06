@@ -25,6 +25,26 @@ function Dashboard({ onNavigate }: DashboardProps) {
         </button>
       </section>
 
+      <section>
+        <h2>Account Activity</h2>
+
+        <p>
+          <strong>Deposits:</strong> ₦0.00
+        </p>
+
+        <p>
+          <strong>Withdrawals:</strong> ₦0.00
+        </p>
+
+        <p>
+          <strong>Active Investments:</strong> 0
+        </p>
+
+        <button onClick={() => onNavigate("transactions")}>
+          View All Transactions
+        </button>
+      </section>
+
       <h2>Quick Actions</h2>
 
       <section>

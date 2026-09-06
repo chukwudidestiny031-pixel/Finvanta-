@@ -7,25 +7,40 @@ function Profile({ onNavigate }: ProfileProps) {
     <main>
       <h1>My Profile</h1>
 
-      <h2>Account Information</h2>
+      <section>
+        <h2>Account Information</h2>
 
-      <p><strong>Name:</strong> Finvanta User</p>
-      <p><strong>Email:</strong> user@example.com</p>
-      <p><strong>Account Status:</strong> Active</p>
+        <p>
+          <strong>Name:</strong> Finvanta User
+        </p>
+
+        <p>
+          <strong>Email:</strong> user@example.com
+        </p>
+
+        <p>
+          <strong>Account Status:</strong> Active
+        </p>
+      </section>
 
       <br />
 
-      <button onClick={() => onNavigate("settings")}>
-        Account Settings
-      </button>
+      <section>
+        <h2>Quick Actions</h2>
 
-      <br /><br />
+        <button onClick={() => onNavigate("transactions")}>
+          Transaction History
+        </button>
 
-      <button onClick={() => onNavigate("transactions")}>
-        Transaction History
-      </button>
+        <br />
+        <br />
 
-      <br /><br />
+        <button onClick={() => onNavigate("settings")}>
+          Account Settings
+        </button>
+      </section>
+
+      <br />
 
       <button onClick={() => onNavigate("dashboard")}>
         Back to Dashboard

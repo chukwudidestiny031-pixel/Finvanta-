@@ -16,6 +16,15 @@ function Dashboard({ onNavigate }: DashboardProps) {
         <p>Your current wallet balance</p>
       </section>
 
+      <section>
+        <h2>My Investments</h2>
+        <p>You have no active investments yet.</p>
+
+        <button onClick={() => onNavigate("investments")}>
+          View Investment Plans
+        </button>
+      </section>
+
       <h2>Quick Actions</h2>
 
       <section>
@@ -23,13 +32,15 @@ function Dashboard({ onNavigate }: DashboardProps) {
           💰 Deposit Money
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
         <button onClick={() => onNavigate("withdraw")}>
           💸 Withdraw Money
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
         <button onClick={() => onNavigate("investments")}>
           📈 Investments
@@ -43,13 +54,15 @@ function Dashboard({ onNavigate }: DashboardProps) {
           Transaction History
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
         <button onClick={() => onNavigate("profile")}>
           My Profile
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
         <button onClick={() => onNavigate("settings")}>
           Settings

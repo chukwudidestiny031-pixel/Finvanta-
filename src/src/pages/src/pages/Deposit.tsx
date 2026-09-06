@@ -1,8 +1,21 @@
+import { useState } from "react";
+
 type DepositProps = {
   onNavigate: (screen: string) => void;
 };
 
 function Deposit({ onNavigate }: DepositProps) {
+  const [amount, setAmount] = useState("");
+
+  const handleContinue = () => {
+    if (!amount || Number(amount) <= 0) {
+      alert("Please enter a valid deposit amount.");
+      return;
+    }
+
+    alert(`Deposit request: ₦${amount}`);
+  };
+
   return (
     <main>
       <h1>Deposit</h1>
@@ -12,13 +25,19 @@ function Deposit({ onNavigate }: DepositProps) {
       <input
         type="number"
         placeholder="Amount in ₦"
+        value={amount}
+        onChange={(event) => setAmount(event.target.value)}
       />
 
-      <br /><br />
+      <br />
+      <br />
 
-      <button>Continue</button>
+      <button onClick={handleContinue}>
+        Continue
+      </button>
 
-      <br /><br />
+      <br />
+      <br />
 
       <button onClick={() => onNavigate("dashboard")}>
         Back to Dashboard

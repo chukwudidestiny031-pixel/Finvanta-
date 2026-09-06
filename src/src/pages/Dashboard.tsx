@@ -5,56 +5,56 @@ type DashboardProps = {
 function Dashboard({ onNavigate }: DashboardProps) {
   return (
     <main>
-      <h1>Finvanta</h1>
-
-      <p>Welcome back!</p>
+      <header>
+        <h1>Finvanta</h1>
+        <p>Welcome back to your financial dashboard.</p>
+      </header>
 
       <section>
-        <h2>Wallet Balance</h2>
+        <p>AVAILABLE BALANCE</p>
         <h1>₦0.00</h1>
-        <p>Available balance</p>
+        <p>Your current wallet balance</p>
       </section>
 
-      <br />
+      <h2>Quick Actions</h2>
 
-      <button onClick={() => onNavigate("deposit")}>
-        Deposit
-      </button>
+      <section>
+        <button onClick={() => onNavigate("deposit")}>
+          💰 Deposit Money
+        </button>
 
-      <br />
-      <br />
+        <br /><br />
 
-      <button onClick={() => onNavigate("withdraw")}>
-        Withdraw
-      </button>
+        <button onClick={() => onNavigate("withdraw")}>
+          💸 Withdraw Money
+        </button>
 
-      <br />
-      <br />
+        <br /><br />
 
-      <button onClick={() => onNavigate("investments")}>
-        Investments
-      </button>
+        <button onClick={() => onNavigate("investments")}>
+          📈 Investments
+        </button>
+      </section>
 
-      <br />
-      <br />
+      <h2>Account</h2>
 
-      <button onClick={() => onNavigate("transactions")}>
-        Transaction History
-      </button>
+      <section>
+        <button onClick={() => onNavigate("transactions")}>
+          Transaction History
+        </button>
 
-      <br />
-      <br />
+        <br /><br />
 
-      <button onClick={() => onNavigate("profile")}>
-        Profile
-      </button>
+        <button onClick={() => onNavigate("profile")}>
+          My Profile
+        </button>
 
-      <br />
-      <br />
+        <br /><br />
 
-      <button onClick={() => onNavigate("settings")}>
-        Settings
-      </button>
+        <button onClick={() => onNavigate("settings")}>
+          Settings
+        </button>
+      </section>
     </main>
   );
 }

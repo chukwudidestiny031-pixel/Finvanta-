@@ -3,6 +3,8 @@ import Dashboard from "./pages/Dashboard";
 import Deposit from "./pages/Deposit";
 import Withdraw from "./pages/Withdraw";
 import Profile from "./pages/Profile";
+import Investments from "./pages/Investments";
+import Transactions from "./pages/Transactions";
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -21,6 +23,14 @@ function App() {
 
   if (screen === "profile") {
     return <Profile onNavigate={setScreen} />;
+  }
+
+  if (screen === "investments") {
+    return <Investments onNavigate={setScreen} />;
+  }
+
+  if (screen === "transactions") {
+    return <Transactions onNavigate={setScreen} />;
   }
 
   if (screen === "welcome") {
